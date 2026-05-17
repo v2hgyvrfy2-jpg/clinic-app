@@ -2,7 +2,10 @@ patients = []
 
 def add_patient(name, age, condition, doctor):
 
+    patient_id = len(patients) + 1
+
     patient = {
+        "id": patient_id,
         "name": name,
         "age": age,
         "condition": condition,
@@ -11,12 +14,22 @@ def add_patient(name, age, condition, doctor):
 
     patients.append(patient)
 
-    print(f"Patient {name} added under Dr. {doctor}.")
+    print(f"Patient {name} (ID: {patient_id}) added under Dr. {doctor}.")
 
 def view_patients():
 
     for p in patients:
         print(p)
+
+def search_patient(name):
+
+    results = [p for p in patients if p["name"].lower() == name.lower()]
+
+    if results:
+        print("Found:", results)
+
+    else:
+        print(f"No patient found with name: {name}")
 
 def main():
 
@@ -26,4 +39,8 @@ def main():
 
     view_patients()
 
-main() 
+    search_patient("Nimal")
+
+    search_patient("Kamal")
+
+main()
