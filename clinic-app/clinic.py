@@ -1,15 +1,17 @@
 patients = []
 
-def add_patient(name, age):
+def add_patient(name, age, condition, doctor):
 
     patient = {
         "name": name,
-        "age": age
+        "age": age,
+        "condition": condition,
+        "doctor": doctor
     }
 
     patients.append(patient)
 
-    print("Patient added.")
+    print(f"Patient {name} added under Dr. {doctor}.")
 
 def view_patients():
 
@@ -18,9 +20,10 @@ def view_patients():
 
 def main():
 
-    add_patient("Nimal", 35)
-    add_patient("Amali", 28)
+    add_patient("Nimal", 35, "Diabetes", "Dr. Silva")
+
+    add_patient("Amali", 28, "Hypertension", "Dr. Perera")
 
     view_patients()
 
-main()
+main() 
