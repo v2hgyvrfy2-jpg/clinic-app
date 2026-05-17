@@ -1,0 +1,6 @@
+print("Student Details" \")
+name = input("Enter your name: ")
+age = input("Enter your age: ")
+grade = input("Enter your grade: ") 
+print("\nStudent Information:")
+print("Name:", name)
